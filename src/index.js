@@ -7,9 +7,13 @@ if (typeof PhusionPassenger !== "undefined") {
 
 const app = express();
 
+const testEnv = process.env.testenv
+
 app.get("/", (req, res) => {
     return res.status(200).json({
-        message: "Hello world from backend"
+        message: "Hello world from backend",
+        message2: "avec la variable testEnv",
+        testEnv
     })
 });
 
